@@ -18,14 +18,14 @@ public class NematodeVisualiser extends PApplet {
 			if (count < 0) {
                 count = count % nematodes.size();
             }
-			draw();
+			draw(count);
 		}		
 		if (keyCode == RIGHT) {
 			count++;
 			if (count > nematodes.size()) {
             	count = count % nematodes.size();
             }
-			draw();
+			draw(count);
 		}
 	}
 
@@ -49,13 +49,11 @@ public class NematodeVisualiser extends PApplet {
 		}
 	}
 
-	public void draw() {
-		drawNematode();
+	public void draw(int count) {
+		drawNematode(count);
 	}
 
-	public void drawNematode() {
-		for (Nematode n:nematodes) {
-			n.render(this);
-		}
+	public void drawNematode(int count) {
+		nematodes.get(count).render(this);
 	}
 }

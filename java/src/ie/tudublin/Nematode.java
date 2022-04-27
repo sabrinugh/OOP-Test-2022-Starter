@@ -34,6 +34,7 @@ public class Nematode {
         );
     }
 
+    // Encapsulation
     public String getName() {
         return name;
     }
@@ -66,9 +67,6 @@ public class Nematode {
     }
 
     public void render(NematodeVisualiser pa) {
-
-        pa.line(pa.height, pa.width, pa.width, pa.height);
-        /*
         // Original scale
         float x = pa.width/2;
         float y = pa.height/2;
@@ -78,46 +76,38 @@ public class Nematode {
         while(longboi > 0) {
             float nY = PApplet.map(x, x, y, x, (y*longboi)*0.5f);
 
-            pa.noFill();
+            pa.stroke(255,255,255);
             pa.circle(x, nY, size);
             if (eyes && longboi == length) {
-                pa.stroke(0);
+                pa.stroke(255,255,255);
                 pa.line(x+size, nY, x, nY+size);
                 pa.line(x-size, nY, x, nY-size);
-                pa.noFill();
                 pa.circle(x-size, nY, size-10);
                 pa.circle(x+size, nY, size-10);
             }
             if (longboi == 1) {
                 if ((char)gender == 'm') {
-                    pa.stroke(0);
+                    pa.stroke(255,255,255);
                     pa.line(x, nY+size, x, nY+(size*2));
-                    pa.noFill();
-                    pa.circle(x-size, nY, size-10);
+                    pa.circle(x, nY+(size*2), size-10);
                 }
                 if ((char)gender == 'f') {
-                    pa.noFill();
                     pa.circle(x, nY, size-10);
                 }
                 if ((char)gender == 'h') {
-                    pa.stroke(0);
+                    pa.stroke(255,255,255);
                     pa.line(x, nY+size, x, nY+(size*2));
-                    pa.noFill();
-                    pa.circle(x+size, nY, size-10);
-                    pa.noFill();
+                    pa.circle(x, nY+(size*2), size-10);
                     pa.circle(x, nY, size-10);
                 }
             }
             if (legs) {
-                pa.stroke(0);
+                pa.stroke(255,255,255);
                 pa.line(x+(size*2), nY, x+(size*3), nY);
                 pa.line(x-(size*2), nY, x-(size*3), nY);
             }
 
             longboi--;
         }
-
-    }
-    */
     }
 }
