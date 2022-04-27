@@ -67,6 +67,7 @@ public class Nematode {
     }
 
     public void render(NematodeVisualiser pa) {
+        pa.background(0);
         // Original scale
         float x = pa.width/2;
         float y = pa.height/2;
