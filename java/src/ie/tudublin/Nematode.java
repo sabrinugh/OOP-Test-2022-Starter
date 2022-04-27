@@ -1,5 +1,6 @@
 package tudublin.ie;
-
+import processing.core.PApplet;
+import processing.data.TableRow;
 public class Nematode {
     private String name;
     private float length;
@@ -16,6 +17,16 @@ public class Nematode {
         this.eyes = eyes;
     }
 
+    // Take input from cvs file from visualiser file (tr)
+    public Nematode(TableRow tr) {
+        this(
+            tr.getString("name"),
+            tr.getFloat("length"),
+            tr.getInt("legs") == 1,
+            tr.getChar("gender"),
+            tr.getInt("eyes") == 1
+        );
+    }
 
     public String getName() {
         return name;
